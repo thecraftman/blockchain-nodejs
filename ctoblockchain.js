@@ -35,7 +35,7 @@ class CryptoBlockchain {
     this.difficulty = 4;
   }
   startGenesisBlock() {
-    return new CryptoBlock(0, "01/01/2020", "Initial Block in the Chain", "0");
+    return new CryptoBlock(0, "16/07/2022", "Initial Block in the Chain", "0");
   }
 
   obtainLatestBlock() {
@@ -69,7 +69,7 @@ ctoaiCoin.addNewBlock(
   new CryptoBlock(1, "13/07/2022", {
     sender: "CTO.ai",
     recipient: "Workflow",
-    quantity: 100
+    quantity: 80
   })
 );
 
@@ -77,7 +77,7 @@ ctoaiCoin.addNewBlock(
   new CryptoBlock(2, "03/06/2021", {
     sender: "Salman Jonah",
     recipient: "pol king",
-    quantity: 100
+    quantity: 300
   })
 );
 
