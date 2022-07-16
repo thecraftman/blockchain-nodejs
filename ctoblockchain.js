@@ -69,7 +69,7 @@ ctoaiCoin.addNewBlock(
   new CryptoBlock(1, "13/07/2022", {
     sender: "CTO.ai",
     recipient: "Workflow",
-    quantity: 800
+    quantity: 600
   })
 );
 
