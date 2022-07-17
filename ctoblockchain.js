@@ -83,7 +83,7 @@ ctoaiCoin.addNewBlock(
   new CryptoBlock(2, "03/06/2021", {
     sender: "Salman Jonah",
     recipient: "pol king",
-    quantity: 100
+    quantity: 200
   })
 );
 
