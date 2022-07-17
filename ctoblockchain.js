@@ -1,4 +1,10 @@
 const SHA256 = require("crypto-js/sha256");
+
+// constants 
+
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
 class CryptoBlock {
   constructor(index, timestamp, data, precedingHash = " ") {
     this.index = index;

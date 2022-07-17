@@ -1,5 +1,5 @@
 services:
-  - name: blockchain-nodejs:0.1.0
+  - name: blockchain-nodejs:0.2.3
     description: preview of sample app
     run: node blockchain-nodejs/ctoblockchain.js
     port: [ '8080:8080' ]
@@ -21,7 +21,7 @@ services:
      - publish
      - start
 pipelines:
-  - name: blockchain-nodejs:0.2.3
+  - name: blockchain-nodejs:0.5.5
     description: build a release for deployment on fargate
     env:
       static:
@@ -29,6 +29,7 @@ pipelines:
         - ORG=thecraftman
         - REPO=blockchain-nodejs
         - REF=main
+        - STACK_TYPE=aws-ecs-fargate
       secrets:
         - GITHUB_TOKEN
         - AWS_ACCESS_KEY_ID
@@ -52,5 +53,5 @@ pipelines:
           - git clone https://$GITHUB_TOKEN:x-oauth-basic@github.com/$ORG/$REPO
           - cd $REPO && ls -asl
           - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO
-          - img build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO:$REF .
-          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO:$REF
+          - docker build -t $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF .
+          - docker push $AWS_ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/$REPO-$STACK_TYPE:$REF
