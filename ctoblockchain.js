@@ -1,9 +1,9 @@
 const SHA256 = require("crypto-js/sha256");
 
-// constants 
+constants 
 
 const PORT = 8080;
-const HOST = '0.0.0.0';
+const HOST = '0.0.0.0'; 
 
 class CryptoBlock {
   constructor(index, timestamp, data, precedingHash = " ") {
@@ -75,15 +75,15 @@ ctoaiCoin.addNewBlock(
   new CryptoBlock(1, "13/07/2022", {
     sender: "CTO.ai",
     recipient: "Workflow",
-    quantity: 100
+    quantity: 2500
   })
 );
 
 ctoaiCoin.addNewBlock(
   new CryptoBlock(2, "03/06/2021", {
     sender: "Salman Jonah",
-    recipient: "pol king",
-    quantity: 100
+    recipient: "machala wiz",
+    quantity: 6000
   })
 );
 

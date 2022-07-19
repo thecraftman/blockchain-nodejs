@@ -1,5 +1,5 @@
 services:
-  - name: blockchain-nodejs:0.2.3
+  - name: blockchain-nodejs:0.9.1
     description: preview of sample app
     run: node blockchain-nodejs/ctoblockchain.js
     port: [ '8080:8080' ]
@@ -21,7 +21,7 @@ services:
      - publish
      - start
 pipelines:
-  - name: blockchain-nodejs:0.5.5
+  - name: blockchain-nodejs:0.6.4
     description: build a release for deployment on fargate
     env:
       static:
