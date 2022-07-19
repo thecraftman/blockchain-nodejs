@@ -16,3 +16,4 @@ COPY . .
 
 EXPOSE 8080
 CMD ["node", "ctoblockchain.js"]
+
